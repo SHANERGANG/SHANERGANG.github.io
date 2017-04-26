@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0/</loc>
-    <lastmod>2017-04-26T15:01:19.000Z</lastmod>
+    <lastmod>2017-04-26T15:08:17.000Z</lastmod>
     <data>
         <display>
         <title>算法导论第六章</title>
@@ -24,8 +24,28 @@
 
     
   <url>
+    <loc>https://shanergang.github.io/2017/04/26/Hexo-%E8%A1%A5%E5%85%85/</loc>
+    <lastmod>2017-04-26T15:07:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-补充</title>
+        <pubTime>2017-04-26T15:04:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo博客构建" url="https://shanergang.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0/</loc>
-    <lastmod>2017-04-26T14:56:29.000Z</lastmod>
+    <lastmod>2017-04-26T15:03:30.000Z</lastmod>
     <data>
         <display>
         <title>算法导论第二章</title>

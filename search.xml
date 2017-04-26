@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Hexo-补充]]></title>
+      <url>%2F2017%2F04%2F26%2FHexo-%E8%A1%A5%E5%85%85%2F</url>
+      <content type="text"><![CDATA[数学公式 安装hexo-math 1npm install hexo-math --save 在根目录下的_config.yml文件中添加 12plugins: hexo-math]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[算法导论第六章]]></title>
       <url>%2F2017%2F04%2F26%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[堆性质的维护 复杂度 $O(\log n)$1234567891011121314151617181920212223242526def MaxHeapIFY(lis, pos, heapsize): while 2*pos+1 &lt; heapsize: if 2*pos+2 &lt; heapsize: left = lis[2*pos+1] right = lis[2*pos+2] root = lis[pos] if left &gt; root and left &gt; right: lis[pos] = left lis[2*pos+1] = root MaxHeapIFY(lis, 2*pos+1, heapsize) elif right &gt; root and right &gt; left: lis[pos] = right lis[2*pos+2] = root MaxHeapIFY(lis, 2*pos+2, heapsize) else: return lis else: left = lis[2*pos+1] root = lis[pos] if left &gt; root: lis[pos] = left lis[2*pos+1] = root MaxHeapIFY(lis, 2*pos+1, heapsize) else: return lis return lis 建堆 复杂度 $O(n)$1234def BuildMaxHeap(lis, heapsize): for pos in range(heapsize-1,-1,-1): MaxHeapIFY(lis, pos, heapsize) return lis 堆排序 复杂度 $O(n \log n)$ 原址排序1234567def HeapSort(lis): for heapsize in range(len(lis),0,-1): BuildMaxHeap(lis, heapsize) largest = lis[0] lis[0] = lis[heapsize-1] lis[heapsize-1] = largest return lis 优先队列 返回最大元素 $\Theta(1)$ 插入新元素 $O(\log n)$ 去掉并返回最大元素 $O(\log n)$ 更新某一元素 $O(\log n)$]]></content>

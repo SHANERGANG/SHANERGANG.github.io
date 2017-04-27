@@ -142,7 +142,7 @@
     <link href="https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
     <id>https://shanergang.github.io/2017/04/26/算法导论第二章/</id>
     <published>2017-04-26T14:40:40.000Z</published>
-    <updated>2017-04-26T15:03:30.000Z</updated>
+    <updated>2017-04-27T08:07:10.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><ul>
 <li>最小复杂度 $O(n)$</li>
@@ -179,7 +179,7 @@
     <link href="https://shanergang.github.io/2017/03/30/Hexo-%E8%BF%9B%E9%98%B6/"/>
     <id>https://shanergang.github.io/2017/03/30/Hexo-进阶/</id>
     <published>2017-03-30T05:50:13.000Z</published>
-    <updated>2017-03-30T08:56:09.000Z</updated>
+    <updated>2017-04-27T08:07:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。</p>
 <h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul>
@@ -189,7 +189,6 @@
 <h2 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h2><ul>
 <li>新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。</li>
 </ul>
-<a id="more"></a>
 <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
 <li><p>安装插件</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-<span class="keyword">tag</span> <span class="title">--save</span></div></pre></td></tr></table></figure>
@@ -261,12 +260,7 @@
     
       &lt;p&gt;个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。&lt;/p&gt;
 &lt;h2 id=&quot;更换主题&quot;&gt;&lt;a href=&quot;#更换主题&quot; class=&quot;headerlink&quot; title=&quot;更换主题&quot;&gt;&lt;/a&gt;更换主题&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;下载主题文件，保存到Hexo目录下的themes文件夹下。修改_config.yml文件中的themes选项。&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# Extensions&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## Plugins: https://hexo.io/plugins/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## Themes: https://hexo.io/themes/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;theme: &amp;lt;theme folder name&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;自定义模板&quot;&gt;&lt;a href=&quot;#自定义模板&quot; class=&quot;headerlink&quot; title=&quot;自定义模板&quot;&gt;&lt;/a&gt;自定义模板&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;下载主题文件，保存到Hex
     
     </summary>
     
@@ -282,7 +276,7 @@
     <link href="https://shanergang.github.io/2017/03/29/Hexo-%E5%9F%BA%E7%A1%80/"/>
     <id>https://shanergang.github.io/2017/03/29/Hexo-基础/</id>
     <published>2017-03-29T12:05:01.000Z</published>
-    <updated>2017-03-30T08:59:34.000Z</updated>
+    <updated>2017-04-27T08:06:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。</p>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><ul>
@@ -296,7 +290,6 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-</div><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<a id="more"></a>
 <h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><ul>
 <li><p>初始化</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
@@ -332,17 +325,7 @@
     <summary type="html">
     
       &lt;p&gt;通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。&lt;/p&gt;
-&lt;h2 id=&quot;安装-Hexo&quot;&gt;&lt;a href=&quot;#安装-Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装 Hexo&quot;&gt;&lt;/a&gt;安装 Hexo&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安装 nvm&lt;/p&gt;
-&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装 node.js&lt;/p&gt;
-&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;nvm install stable&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装 Hexo&lt;/p&gt;
-&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install -g hexo-&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;安装-Hexo&quot;&gt;&lt;a href=&quot;#安装-Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装 Hexo&quot;&gt;&lt;/a
     
     </summary>
     

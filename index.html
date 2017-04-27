@@ -87,15 +87,15 @@
 
 
 
-<meta name="description" content="浮世录">
+<meta name="description" content="砂砾">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Grit">
 <meta property="og:url" content="https://shanergang.github.io/index.html">
 <meta property="og:site_name" content="Grit">
-<meta property="og:description" content="浮世录">
+<meta property="og:description" content="砂砾">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grit">
-<meta name="twitter:description" content="浮世录">
+<meta name="twitter:description" content="砂砾">
 
 
 
@@ -130,7 +130,7 @@
 
 
   <title> 
-  SEG - Grit - 浮世录 
+  SEG - Grit - 砂砾 
 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -421,32 +421,18 @@
       
         
           
-            <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><ul>
-<li>原址排序</li>
-<li>期望时间复杂度 $\Theta(n\log n)$，且常数因子很小</li>
-<li>最好时间复杂度 $\Theta(n\log n)$</li>
-<li>只要划分是常数比例，快排复杂度始终为 $\Theta(n\log n)$<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    <span class="keyword">if</span> p &gt;= r:</div><div class="line">        <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        q = Partion(lis, p, r)</div><div class="line">        QuickSort(lis, p, q<span class="number">-1</span>)</div><div class="line">        QuickSort(lis, q+<span class="number">1</span>, r)</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partion</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    x = lis[r]</div><div class="line">    i = p<span class="number">-1</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(p, r):</div><div class="line">        <span class="keyword">if</span> lis[j] &lt;= x:</div><div class="line">            i = i+<span class="number">1</span></div><div class="line">            temp = lis[i]</div><div class="line">            lis[i] = lis[j]</div><div class="line">            lis[j] = temp</div><div class="line">    lis[r] = lis[i+<span class="number">1</span>]</div><div class="line">    lis[i+<span class="number">1</span>] = x</div><div class="line">    <span class="keyword">return</span> i+<span class="number">1</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="随机化快排"><a href="#随机化快排" class="headerlink" title="随机化快排"></a>随机化快排</h2><ul>
-<li>随机选择划分主元<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">RandomQuickSort</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    <span class="keyword">if</span> p &gt;= r:</div><div class="line">        <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        q = RandomPartion(lis, p, r)</div><div class="line">        QuickSort(lis, p, q<span class="number">-1</span>)</div><div class="line">        QuickSort(lis, q+<span class="number">1</span>, r)</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">RandomPartion</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    index = randint(p,r)</div><div class="line">    x = lis[r]</div><div class="line">    lis[r] = lis[index]</div><div class="line">    lis[index] = x</div><div class="line">    <span class="keyword">return</span> Partion(lis, p, r)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="期望时间复杂度证明"><a href="#期望时间复杂度证明" class="headerlink" title="期望时间复杂度证明"></a>期望时间复杂度证明</h2><ul>
-<li>快排运行时间有Partion上的操作时间决定</li>
-<li>Partion操作至多被执行 $n$ 次</li>
-<li><font color="red">分析划分主元与元素比较的总次数</font>
-
-</li>
-</ul>
-<h2 id="最坏时间复杂度证明"><a href="#最坏时间复杂度证明" class="headerlink" title="最坏时间复杂度证明"></a>最坏时间复杂度证明</h2><p>$$ T(n) = \max_{0 \leq q\leq n-1} {T(q), T(n-1-q)} + \Theta(n) $$</p>
-<ul>
-<li>最坏时间复杂度 $\Theta(n^2)$</li>
-<li>对完全有序数组，快排复杂度为 $\Theta(n^2)$，插入排序复杂度为 $\Theta(n)$</li>
-</ul>
-<p>Ex. 7.1-2, 7.4-1, 7.4-5, 7.4-6<br><img src="/images/2017-04-27-算法导论第七章/Exercise.png" alt="Alt text"></p>
-
-          
+          快速排序
+原址排序
+期望时间复杂度 $\Theta(n\log n)$，且常数因子很小
+最好时间复杂
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/27/算法导论第七章/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -613,15 +599,19 @@
       
         
           
-            <h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><ul>
-<li><p>安装hexo-math</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-math --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>在根目录下的_config.yml文件中添加</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins: </div><div class="line">  hexo-math</div></pre></td></tr></table></figure></li>
-</ul>
+          数学公式
+安装hexo-math
+1npm install hexo-math --save
 
-          
+在根
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/26/Hexo-补充/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -788,27 +778,16 @@
       
         
           
-            <h2 id="堆性质的维护"><a href="#堆性质的维护" class="headerlink" title="堆性质的维护"></a>堆性质的维护</h2><ul>
-<li>复杂度 $O(\log n)$<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MaxHeapIFY</span><span class="params">(lis, pos, heapsize)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="number">2</span>*pos+<span class="number">1</span> &lt; heapsize:</div><div class="line">        <span class="keyword">if</span> <span class="number">2</span>*pos+<span class="number">2</span> &lt; heapsize:</div><div class="line">            left = lis[<span class="number">2</span>*pos+<span class="number">1</span>]</div><div class="line">            right = lis[<span class="number">2</span>*pos+<span class="number">2</span>]</div><div class="line">            root = lis[pos]</div><div class="line">            <span class="keyword">if</span> left &gt; root <span class="keyword">and</span> left &gt; right:</div><div class="line">                lis[pos] = left</div><div class="line">                lis[<span class="number">2</span>*pos+<span class="number">1</span>] = root</div><div class="line">                MaxHeapIFY(lis, <span class="number">2</span>*pos+<span class="number">1</span>, heapsize)</div><div class="line">            <span class="keyword">elif</span> right &gt; root <span class="keyword">and</span> right &gt; left:</div><div class="line">                lis[pos] = right</div><div class="line">                lis[<span class="number">2</span>*pos+<span class="number">2</span>] = root</div><div class="line">                MaxHeapIFY(lis, <span class="number">2</span>*pos+<span class="number">2</span>, heapsize)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> lis</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            left = lis[<span class="number">2</span>*pos+<span class="number">1</span>]</div><div class="line">            root = lis[pos]</div><div class="line">            <span class="keyword">if</span> left &gt; root:</div><div class="line">                lis[pos] = left</div><div class="line">                lis[<span class="number">2</span>*pos+<span class="number">1</span>] = root</div><div class="line">                MaxHeapIFY(lis, <span class="number">2</span>*pos+<span class="number">1</span>, heapsize)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">return</span> lis</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="建堆"><a href="#建堆" class="headerlink" title="建堆"></a>建堆</h2><ul>
-<li>复杂度 $O(n)$<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">BuildMaxHeap</span><span class="params">(lis, heapsize)</span>:</span></div><div class="line">    <span class="keyword">for</span> pos <span class="keyword">in</span> range(heapsize<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</div><div class="line">        MaxHeapIFY(lis, pos, heapsize)</div><div class="line">    <span class="keyword">return</span> lis</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><ul>
-<li>复杂度 $O(n \log n)$</li>
-<li>原址排序<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">HeapSort</span><span class="params">(lis)</span>:</span></div><div class="line">    <span class="keyword">for</span> heapsize <span class="keyword">in</span> range(len(lis),<span class="number">0</span>,<span class="number">-1</span>):</div><div class="line">        BuildMaxHeap(lis, heapsize)</div><div class="line">        largest = lis[<span class="number">0</span>]</div><div class="line">        lis[<span class="number">0</span>] = lis[heapsize<span class="number">-1</span>]</div><div class="line">        lis[heapsize<span class="number">-1</span>] = largest</div><div class="line">    <span class="keyword">return</span> lis</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><ul>
-<li>返回最大元素 $\Theta(1)$</li>
-<li>插入新元素 $O(\log n)$</li>
-<li>去掉并返回最大元素 $O(\log n)$</li>
-<li>更新某一元素 $O(\log n)$</li>
-</ul>
-
-          
+          堆性质的维护
+复杂度 $O(\log n)$1234567891011121314151617181
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/26/算法导论第六章/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -975,20 +954,20 @@
       
         
           
-            <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><ul>
-<li>最小复杂度 $O(n)$</li>
-<li>最大复杂度 $O(n^2)$</li>
-<li>平均复杂度 $O(n^2)$</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Insertion_Sort_Asce</span><span class="params">(lis)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(lis)):</div><div class="line">        j = i</div><div class="line">        key = lis[j]</div><div class="line">        <span class="keyword">while</span> j &gt; <span class="number">0</span> <span class="keyword">and</span> key &lt; lis[j<span class="number">-1</span>]:</div><div class="line">            lis[j] = lis[j<span class="number">-1</span>]</div><div class="line">            j = j - <span class="number">1</span></div><div class="line">        lis[j] = key</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Insertion_Sort_Desc</span><span class="params">(lis)</span>:</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(lis)):</div><div class="line">        j = i</div><div class="line">        key = lis[j]</div><div class="line">        <span class="keyword">while</span> j &gt; <span class="number">0</span> <span class="keyword">and</span> key &gt; lis[j<span class="number">-1</span>]:</div><div class="line">            lis[j] = lis[j<span class="number">-1</span>]</div><div class="line">            j = j - <span class="number">1</span></div><div class="line">        lis[j] = key</div><div class="line">    <span class="keyword">return</span> lis</div></pre></td></tr></table></figure>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><ul>
-<li>最小复杂度 $O(n \log n)$</li>
-<li>最大复杂度 $O(n \log n)$</li>
-<li>平均复杂度 $O(n \log n)$</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Merge</span><span class="params">(lis1, lis2)</span>:</span></div><div class="line">    <span class="keyword">if</span> lis1 == []:</div><div class="line">        <span class="keyword">return</span> lis2</div><div class="line">    <span class="keyword">if</span> lis2 == []:</div><div class="line">        <span class="keyword">return</span> lis1</div><div class="line">    <span class="keyword">if</span> lis1[<span class="number">0</span>] &lt;= lis2[<span class="number">0</span>]:</div><div class="line">        <span class="keyword">return</span> [lis1[<span class="number">0</span>]] + Merge(lis1[<span class="number">1</span>:], lis2)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> [lis2[<span class="number">0</span>]] + Merge(lis1, lis2[<span class="number">1</span>:])</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Merge_Sort</span><span class="params">(lis)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(lis) &gt; <span class="number">1</span>:</div><div class="line">        q = len(lis)/<span class="number">2</span></div><div class="line">        <span class="keyword">return</span> Merge(Merge_Sort(lis[:q]), Merge_Sort(lis[q:]))</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> lis</div></pre></td></tr></table></figure>
+          插入排序
+最小复杂度 $O(n)$
+最大复杂度 $O(n^2)$
+平均复杂度 $O(n^2)$
 
-          
+1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/26/算法导论第二章/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1423,7 +1402,7 @@
                src="/images/avatar.png"
                alt="Ergang SHAN" />
           <p class="site-author-name" itemprop="name">Ergang SHAN</p>
-          <p class="site-description motion-element" itemprop="description">浮世录</p>
+          <p class="site-description motion-element" itemprop="description">砂砾</p>
         </div>
         <nav class="site-state motion-element">
         
@@ -1784,6 +1763,28 @@
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

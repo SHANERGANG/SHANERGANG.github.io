@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[算法导论第七章]]></title>
+      <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0%2F</url>
+      <content type="text"><![CDATA[快速排序 原址排序 期望时间复杂度 $\Theta(n\log n)$，且常数因子很小 最好时间复杂度 $\Theta(n\log n)$ 只要划分是常数比例，快排复杂度始终为 $\Theta(n\log n)$123456789101112131415161718192021def QuickSort(lis, p, r): if p &gt;= r: return lis else: q = Partion(lis, p, r) QuickSort(lis, p, q-1) QuickSort(lis, q+1, r) return lisdef Partion(lis, p, r): x = lis[r] i = p-1 for j in range(p, r): if lis[j] &lt;= x: i = i+1 temp = lis[i] lis[i] = lis[j] lis[j] = temp lis[r] = lis[i+1] lis[i+1] = x return i+1 随机化快排 随机选择划分主元1234567891011121314151617from random import randintdef RandomQuickSort(lis, p, r): if p &gt;= r: return lis else: q = RandomPartion(lis, p, r) QuickSort(lis, p, q-1) QuickSort(lis, q+1, r) return lisdef RandomPartion(lis, p, r): index = randint(p,r) x = lis[r] lis[r] = lis[index] lis[index] = x return Partion(lis, p, r) 期望时间复杂度证明 快排运行时间有Partion上的操作时间决定 Partion操作至多被执行 $n$ 次 分析划分主元与元素比较的总次数 最坏时间复杂度证明$$ T(n) = \max_{0 \leq q\leq n-1} {T(q), T(n-1-q)} + \Theta(n) $$ 最坏时间复杂度 $\Theta(n^2)$ 对完全有序数组，快排复杂度为 $\Theta(n^2)$，插入排序复杂度为 $\Theta(n)$ Ex. 7.1-2, 7.4-1, 7.4-5, 7.4-6]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hexo-补充]]></title>
       <url>%2F2017%2F04%2F26%2FHexo-%E8%A1%A5%E5%85%85%2F</url>
       <content type="text"><![CDATA[数学公式 安装hexo-math 1npm install hexo-math --save 在根目录下的_config.yml文件中添加 12plugins: hexo-math]]></content>

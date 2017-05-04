@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shanergang.github.io/"/>
-  <updated>2017-04-27T13:39:35.000Z</updated>
+  <updated>2017-05-04T04:05:07.000Z</updated>
   <id>https://shanergang.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法导论第九章</title>
+    <link href="https://shanergang.github.io/2017/05/04/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/05/04/算法导论第九章/</id>
+    <published>2017-05-04T04:03:00.000Z</published>
+    <updated>2017-05-04T04:05:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最值"><a href="#最值" class="headerlink" title="最值"></a>最值</h2><ul>
+<li>算法复杂度 $\Theta(n)$， 比较次数 $n-1$</li>
+<li>同时找到最小、最大值复杂度$\Theta(n)$， 比较次数  $3\lfloor n/2 \rfloor$</li>
+</ul>
+<h2 id="顺序统计量"><a href="#顺序统计量" class="headerlink" title="顺序统计量"></a>顺序统计量</h2><h3 id="随机选择算法"><a href="#随机选择算法" class="headerlink" title="随机选择算法"></a>随机选择算法</h3><ul>
+<li>参考快排</li>
+<li>算法期望复杂度 $\Theta(n)$<br>$$ T(n) \leq \sum_{k=1}^{n} X<em>k \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$<br>$$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum</em>{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$</li>
+</ul>
+<h3 id="最坏情况为线性时间的选择算法"><a href="#最坏情况为线性时间的选择算法" class="headerlink" title="最坏情况为线性时间的选择算法"></a>最坏情况为线性时间的选择算法</h3><ul>
+<li>中位数</li>
+<li>将数据每五个为一组分组，找到每组的中位数</li>
+<li>将各组中位数的中位数为主元<br>$$ T(n) \leq T(\lceil n/5 \rceil) + T(7n/10+6) + O(n) $$</li>
+</ul>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><img src="/images/算法导论学习/Chp9-Exercise.png" alt="Alt text"></p>
+<p>9.1-1, 9.1-2, 9.3-1, 9.3-3, 9.3-5, 9.3-6, 9.3-7, 9.3-8 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;最值&quot;&gt;&lt;a href=&quot;#最值&quot; class=&quot;headerlink&quot; title=&quot;最值&quot;&gt;&lt;/a&gt;最值&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;算法复杂度 $\Theta(n)$， 比较次数 $n-1$&lt;/li&gt;
+&lt;li&gt;同时找到最小、最大值复杂度$\Theta(n)$，
+    
+    </summary>
+    
+      <category term="算法导论学习" scheme="https://shanergang.github.io/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="选择算法" scheme="https://shanergang.github.io/tags/%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>算法导论第八章</title>

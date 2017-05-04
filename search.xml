@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[算法导论第九章]]></title>
+      <url>%2F2017%2F05%2F04%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0%2F</url>
+      <content type="text"><![CDATA[最值 算法复杂度 $\Theta(n)$， 比较次数 $n-1$ 同时找到最小、最大值复杂度$\Theta(n)$， 比较次数 $3\lfloor n/2 \rfloor$ 顺序统计量随机选择算法 参考快排 算法期望复杂度 $\Theta(n)$$$ T(n) \leq \sum_{k=1}^{n} Xk \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$$$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$ 最坏情况为线性时间的选择算法 中位数 将数据每五个为一组分组，找到每组的中位数 将各组中位数的中位数为主元$$ T(n) \leq T(\lceil n/5 \rceil) + T(7n/10+6) + O(n) $$ 习题 9.1-1, 9.1-2, 9.3-1, 9.3-3, 9.3-5, 9.3-6, 9.3-7, 9.3-8]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[算法导论第八章]]></title>
       <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AB%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[比较排序 比较排序算法下界 比较排序与决策树（完全二叉树）的关系 决策树高度与比较排序复杂度的关系 运算排序记数排序 $n$ 个在 $[0, k]$ 的整数，运行时间为 $O(k+n)$ 基本思想：对每个输入元素 $x$, 确定不超过 $x$ 的元素的个数 稳定排序：具有相同值的元素在输入和输出数组上顺序一致 非原址排序1234567891011121314151617181920def CountingSort(lis, k): B = [] for i in range(len(lis)): B.append(0) C = [] for i in range(k+1): C.append(0) for i in lis: C[i] += 1 for i in range(1,k+1): C[i] = C[i]+C[i-1] for i in range(len(lis)-1,-1,-1): B[C[lis[i]]-1] = lis[i] C[lis[i]] -= 1 return B 基数排序 $n$ 个在 $d$ 位数，每位有 $k$ 个可能取值，运行时间为 $O(d(k+n))$ 基于稳定排序 先按最高有效位 v.s. 先按最低有效位 对位数的灵活分解 桶排序 输入数据服从均匀分布 $n$ 个数据设计 $n$ 个桶 期望运行时间 $\Theta(n)$$$ T(n) = \Theta(n) + \sum_{i=1}^{n}O(n_i^2) $$ 习题8.1-2, 8.1-3, 8.2-3, 8.2-4, 8.3-2, 8.3-4, 8.3-5, 8.4-4, 8.4-5]]></content>

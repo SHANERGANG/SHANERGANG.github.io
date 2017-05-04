@@ -93,7 +93,9 @@
 
 顺序统计量随机选择算法
 参考快排
-算法期望复杂度 $\Theta(n)$$$ T(n) \leq \sum_{k=1}^{n} Xk \cdot \left (T(\max\lbrace k-1, n-k \rbrace)">
+算法期望复杂度 $\Theta(n)$
+
+$$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法导论第九章">
 <meta property="og:url" content="https://shanergang.github.io/2017/05/04/算法导论第九章/index.html">
@@ -104,9 +106,11 @@
 
 顺序统计量随机选择算法
 参考快排
-算法期望复杂度 $\Theta(n)$$$ T(n) \leq \sum_{k=1}^{n} Xk \cdot \left (T(\max\lbrace k-1, n-k \rbrace)">
+算法期望复杂度 $\Theta(n)$
+
+$$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbra">
 <meta property="og:image" content="https://shanergang.github.io/images/算法导论学习/Chp9-Exercise.png">
-<meta property="og:updated_time" content="2017-05-04T04:05:07.000Z">
+<meta property="og:updated_time" content="2017-05-04T04:07:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论第九章">
 <meta name="twitter:description" content="最值
@@ -115,7 +119,9 @@
 
 顺序统计量随机选择算法
 参考快排
-算法期望复杂度 $\Theta(n)$$$ T(n) \leq \sum_{k=1}^{n} Xk \cdot \left (T(\max\lbrace k-1, n-k \rbrace)">
+算法期望复杂度 $\Theta(n)$
+
+$$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbra">
 <meta name="twitter:image" content="https://shanergang.github.io/images/算法导论学习/Chp9-Exercise.png">
 
 
@@ -439,8 +445,10 @@
 </ul>
 <h2 id="顺序统计量"><a href="#顺序统计量" class="headerlink" title="顺序统计量"></a>顺序统计量</h2><h3 id="随机选择算法"><a href="#随机选择算法" class="headerlink" title="随机选择算法"></a>随机选择算法</h3><ul>
 <li>参考快排</li>
-<li>算法期望复杂度 $\Theta(n)$<br>$$ T(n) \leq \sum_{k=1}^{n} X<em>k \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$<br>$$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum</em>{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$</li>
+<li>算法期望复杂度 $\Theta(n)$</li>
 </ul>
+<p>$$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$</p>
+<p>$$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum_{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$</p>
 <h3 id="最坏情况为线性时间的选择算法"><a href="#最坏情况为线性时间的选择算法" class="headerlink" title="最坏情况为线性时间的选择算法"></a>最坏情况为线性时间的选择算法</h3><ul>
 <li>中位数</li>
 <li>将数据每五个为一组分组，找到每组的中位数</li>

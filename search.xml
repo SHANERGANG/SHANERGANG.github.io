@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[算法导论第九章]]></title>
       <url>%2F2017%2F05%2F04%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0%2F</url>
-      <content type="text"><![CDATA[最值 算法复杂度 $\Theta(n)$， 比较次数 $n-1$ 同时找到最小、最大值复杂度$\Theta(n)$， 比较次数 $3\lfloor n/2 \rfloor$ 顺序统计量随机选择算法 参考快排 算法期望复杂度 $\Theta(n)$$$ T(n) \leq \sum_{k=1}^{n} Xk \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$$$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$ 最坏情况为线性时间的选择算法 中位数 将数据每五个为一组分组，找到每组的中位数 将各组中位数的中位数为主元$$ T(n) \leq T(\lceil n/5 \rceil) + T(7n/10+6) + O(n) $$ 习题 9.1-1, 9.1-2, 9.3-1, 9.3-3, 9.3-5, 9.3-6, 9.3-7, 9.3-8]]></content>
+      <content type="text"><![CDATA[最值 算法复杂度 $\Theta(n)$， 比较次数 $n-1$ 同时找到最小、最大值复杂度$\Theta(n)$， 比较次数 $3\lfloor n/2 \rfloor$ 顺序统计量随机选择算法 参考快排 算法期望复杂度 $\Theta(n)$ $$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$ $$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum_{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$ 最坏情况为线性时间的选择算法 中位数 将数据每五个为一组分组，找到每组的中位数 将各组中位数的中位数为主元$$ T(n) \leq T(\lceil n/5 \rceil) + T(7n/10+6) + O(n) $$ 习题 9.1-1, 9.1-2, 9.3-1, 9.3-3, 9.3-5, 9.3-6, 9.3-7, 9.3-8]]></content>
     </entry>
 
     

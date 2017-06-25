@@ -89,35 +89,41 @@
 
 <meta name="description" content="距离度量样本点之间的距离有序属性
 闵可夫斯基距离$$ Lp = \left( \sum{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$
+
 曼哈顿距离 $L_1$
+
 欧氏距离 $L_2$
 切比雪夫距离 $L_\infty$
 
 无序属性
-属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m{u">
+属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聚类">
 <meta property="og:url" content="https://shanergang.github.io/2017/06/25/聚类/index.html">
 <meta property="og:site_name" content="Grit">
 <meta property="og:description" content="距离度量样本点之间的距离有序属性
 闵可夫斯基距离$$ Lp = \left( \sum{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$
+
 曼哈顿距离 $L_1$
+
 欧氏距离 $L_2$
 切比雪夫距离 $L_\infty$
 
 无序属性
-属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m{u">
-<meta property="og:updated_time" content="2017-06-25T13:58:52.000Z">
+属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m">
+<meta property="og:updated_time" content="2017-06-25T14:07:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聚类">
 <meta name="twitter:description" content="距离度量样本点之间的距离有序属性
 闵可夫斯基距离$$ Lp = \left( \sum{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$
+
 曼哈顿距离 $L_1$
+
 欧氏距离 $L_2$
 切比雪夫距离 $L_\infty$
 
 无序属性
-属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m{u">
+属性u上，值为a，b的 VDM 距离$$ VDM(a,b)p = \sum{i=1}^{k} \left| \frac{m">
 
 
 
@@ -435,8 +441,10 @@
 
       
         <h2 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h2><h3 id="样本点之间的距离"><a href="#样本点之间的距离" class="headerlink" title="样本点之间的距离"></a>样本点之间的距离</h3><h4 id="有序属性"><a href="#有序属性" class="headerlink" title="有序属性"></a>有序属性</h4><ul>
-<li>闵可夫斯基距离<br>$$ L<em>p = \left( \sum</em>{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$</li>
-<li>曼哈顿距离 $L_1$</li>
+<li><p>闵可夫斯基距离<br>$$ L<em>p = \left( \sum</em>{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$</p>
+</li>
+<li><p>曼哈顿距离 $L_1$</p>
+</li>
 <li>欧氏距离 $L_2$</li>
 <li>切比雪夫距离 $L_\infty$</li>
 </ul>
@@ -461,14 +469,17 @@
 </li>
 <li><p>类的直径<br>$$ \text{diam}(C) = \max_{1\leq i&lt;j\leq |C|} \text{dist}(x_i,x_j) $$</p>
 </li>
-<li><p>指数<br>$$ \text{DBI} = \frac{1}{k}\sum<em>{i=1}^k \max</em>{j \neq i}\left( \frac{avg(C_i)+avg(C<em>j)}{\text{dist}</em>{\text{cen}}(C_i,C_j)}\right) $$</p>
+<li><p>指数<br>$$ \text{DBI} = \frac{1}{k} \sum<em>{i=1}^k \max</em>{j \neq i}\left( \frac{avg(C_i)+avg(C<em>j)}{\text{dist}</em>{\text{cen}}(C_i,C_j)}\right) $$</p>
 </li>
 </ul>
 <h3 id="外部性能度量"><a href="#外部性能度量" class="headerlink" title="外部性能度量"></a>外部性能度量</h3><ul>
-<li><p>不同聚类模型之间的比较<br>$$ a = |SS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$<br>$$ b = |SD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$<br>$$ c = |DS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$<br>$$ d = |DD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
-</li>
-<li><p>指数<br>$$ \text{FMI} = \sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}} $$</p>
-</li>
+<li>不同聚类模型之间的比较<br>$$ a = |SS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$</li>
+</ul>
+<p>$$ b = |SD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
+<p>$$ c = |DS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$</p>
+<p>$$ d = |DD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
+<ul>
+<li>指数<br>$$ \text{FMI} = \sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}} $$</li>
 </ul>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h3><h4 id="k均值算法"><a href="#k均值算法" class="headerlink" title="k均值算法"></a>k均值算法</h4><ul>
 <li>找原型向量，最小化平方误差</li>

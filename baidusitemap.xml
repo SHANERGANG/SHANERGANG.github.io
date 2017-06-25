@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://shanergang.github.io/2017/06/25/%E8%81%9A%E7%B1%BB/</loc>
-    <lastmod>2017-06-25T13:58:52.000Z</lastmod>
+    <lastmod>2017-06-25T14:07:14.000Z</lastmod>
     <data>
         <display>
         <title>聚类</title>
@@ -17,6 +17,26 @@
            
              
               <breadCrumb title="机器学习" url="https://shanergang.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0/</loc>
+    <lastmod>2017-06-25T14:03:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>算法导论第七章</title>
+        <pubTime>2017-04-27T04:28:07.000Z</pubTime>
+        
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="算法导论学习" url="https://shanergang.github.io/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -72,26 +92,6 @@
         <pubTime>2017-05-04T04:03:00.000Z</pubTime>
         
         <tag>选择算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="算法导论学习" url="https://shanergang.github.io/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0/</loc>
-    <lastmod>2017-04-27T13:39:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>算法导论第七章</title>
-        <pubTime>2017-04-27T04:28:07.000Z</pubTime>
-        
-        <tag>排序算法</tag>
          
          
            

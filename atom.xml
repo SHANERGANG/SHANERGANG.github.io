@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shanergang.github.io/"/>
-  <updated>2017-06-25T13:58:52.000Z</updated>
+  <updated>2017-06-25T14:07:14.000Z</updated>
   <id>https://shanergang.github.io/</id>
   
   <author>
@@ -20,11 +20,13 @@
     <link href="https://shanergang.github.io/2017/06/25/%E8%81%9A%E7%B1%BB/"/>
     <id>https://shanergang.github.io/2017/06/25/聚类/</id>
     <published>2017-06-25T12:42:15.000Z</published>
-    <updated>2017-06-25T13:58:52.000Z</updated>
+    <updated>2017-06-25T14:07:14.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h2><h3 id="样本点之间的距离"><a href="#样本点之间的距离" class="headerlink" title="样本点之间的距离"></a>样本点之间的距离</h3><h4 id="有序属性"><a href="#有序属性" class="headerlink" title="有序属性"></a>有序属性</h4><ul>
-<li>闵可夫斯基距离<br>$$ L<em>p = \left( \sum</em>{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$</li>
-<li>曼哈顿距离 $L_1$</li>
+<li><p>闵可夫斯基距离<br>$$ L<em>p = \left( \sum</em>{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$</p>
+</li>
+<li><p>曼哈顿距离 $L_1$</p>
+</li>
 <li>欧氏距离 $L_2$</li>
 <li>切比雪夫距离 $L_\infty$</li>
 </ul>
@@ -49,14 +51,17 @@
 </li>
 <li><p>类的直径<br>$$ \text{diam}(C) = \max_{1\leq i&lt;j\leq |C|} \text{dist}(x_i,x_j) $$</p>
 </li>
-<li><p>指数<br>$$ \text{DBI} = \frac{1}{k}\sum<em>{i=1}^k \max</em>{j \neq i}\left( \frac{avg(C_i)+avg(C<em>j)}{\text{dist}</em>{\text{cen}}(C_i,C_j)}\right) $$</p>
+<li><p>指数<br>$$ \text{DBI} = \frac{1}{k} \sum<em>{i=1}^k \max</em>{j \neq i}\left( \frac{avg(C_i)+avg(C<em>j)}{\text{dist}</em>{\text{cen}}(C_i,C_j)}\right) $$</p>
 </li>
 </ul>
 <h3 id="外部性能度量"><a href="#外部性能度量" class="headerlink" title="外部性能度量"></a>外部性能度量</h3><ul>
-<li><p>不同聚类模型之间的比较<br>$$ a = |SS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$<br>$$ b = |SD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$<br>$$ c = |DS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$<br>$$ d = |DD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
-</li>
-<li><p>指数<br>$$ \text{FMI} = \sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}} $$</p>
-</li>
+<li>不同聚类模型之间的比较<br>$$ a = |SS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$</li>
+</ul>
+<p>$$ b = |SD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
+<p>$$ c = |DS|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>=\lambda_j^</em>, \; i&lt;j } $$</p>
+<p>$$ d = |DD|,    \quad SS = { (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^<em>\neq\lambda_j^</em>, \; i&lt;j } $$</p>
+<ul>
+<li>指数<br>$$ \text{FMI} = \sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}} $$</li>
 </ul>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="原型聚类"><a href="#原型聚类" class="headerlink" title="原型聚类"></a>原型聚类</h3><h4 id="k均值算法"><a href="#k均值算法" class="headerlink" title="k均值算法"></a>k均值算法</h4><ul>
 <li>找原型向量，最小化平方误差</li>
@@ -269,15 +274,15 @@
     <link href="https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0/"/>
     <id>https://shanergang.github.io/2017/04/27/算法导论第七章/</id>
     <published>2017-04-27T04:28:07.000Z</published>
-    <updated>2017-04-27T13:39:48.000Z</updated>
+    <updated>2017-06-25T14:03:22.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><ul>
 <li>原址排序</li>
 <li>期望时间复杂度 $\Theta(n\log n)$，且常数因子很小</li>
 <li>最好时间复杂度 $\Theta(n\log n)$</li>
-<li>只要划分是常数比例，快排复杂度始终为 $\Theta(n\log n)$<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    <span class="keyword">if</span> p &gt;= r:</div><div class="line">        <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        q = Partion(lis, p, r)</div><div class="line">        QuickSort(lis, p, q<span class="number">-1</span>)</div><div class="line">        QuickSort(lis, q+<span class="number">1</span>, r)</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partion</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    x = lis[r]</div><div class="line">    i = p<span class="number">-1</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(p, r):</div><div class="line">        <span class="keyword">if</span> lis[j] &lt;= x:</div><div class="line">            i = i+<span class="number">1</span></div><div class="line">            temp = lis[i]</div><div class="line">            lis[i] = lis[j]</div><div class="line">            lis[j] = temp</div><div class="line">    lis[r] = lis[i+<span class="number">1</span>]</div><div class="line">    lis[i+<span class="number">1</span>] = x</div><div class="line">    <span class="keyword">return</span> i+<span class="number">1</span></div></pre></td></tr></table></figure>
-</li>
+<li>只要划分是常数比例，快排复杂度始终为 $\Theta(n\log n)$</li>
 </ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    <span class="keyword">if</span> p &gt;= r:</div><div class="line">        <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        q = Partion(lis, p, r)</div><div class="line">        QuickSort(lis, p, q<span class="number">-1</span>)</div><div class="line">        QuickSort(lis, q+<span class="number">1</span>, r)</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partion</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    x = lis[r]</div><div class="line">    i = p<span class="number">-1</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(p, r):</div><div class="line">        <span class="keyword">if</span> lis[j] &lt;= x:</div><div class="line">            i = i+<span class="number">1</span></div><div class="line">            temp = lis[i]</div><div class="line">            lis[i] = lis[j]</div><div class="line">            lis[j] = temp</div><div class="line">    lis[r] = lis[i+<span class="number">1</span>]</div><div class="line">    lis[i+<span class="number">1</span>] = x</div><div class="line">    <span class="keyword">return</span> i+<span class="number">1</span></div></pre></td></tr></table></figure>
 <h2 id="随机化快排"><a href="#随机化快排" class="headerlink" title="随机化快排"></a>随机化快排</h2><ul>
 <li>随机选择划分主元<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">RandomQuickSort</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    <span class="keyword">if</span> p &gt;= r:</div><div class="line">        <span class="keyword">return</span> lis</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        q = RandomPartion(lis, p, r)</div><div class="line">        QuickSort(lis, p, q<span class="number">-1</span>)</div><div class="line">        QuickSort(lis, q+<span class="number">1</span>, r)</div><div class="line">    <span class="keyword">return</span> lis</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">RandomPartion</span><span class="params">(lis, p, r)</span>:</span></div><div class="line">    index = randint(p,r)</div><div class="line">    x = lis[r]</div><div class="line">    lis[r] = lis[index]</div><div class="line">    lis[index] = x</div><div class="line">    <span class="keyword">return</span> Partion(lis, p, r)</div></pre></td></tr></table></figure>
 </li>

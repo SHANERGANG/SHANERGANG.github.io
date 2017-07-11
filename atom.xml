@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shanergang.github.io/"/>
-  <updated>2017-07-11T04:19:36.000Z</updated>
+  <updated>2017-07-11T04:24:08.000Z</updated>
   <id>https://shanergang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://shanergang.github.io/2017/07/03/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
     <id>https://shanergang.github.io/2017/07/03/集成学习/</id>
     <published>2017-07-03T11:44:37.000Z</published>
-    <updated>2017-07-11T04:19:36.000Z</updated>
+    <updated>2017-07-11T04:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
 <li>基学习器 同质/异质 准确性/多样性 弱学习器</li>
@@ -166,16 +166,18 @@
       <category term="机器学习" scheme="https://shanergang.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Bagging, Boosting" scheme="https://shanergang.github.io/tags/Bagging-Boosting/"/>
+      <category term="Bagging" scheme="https://shanergang.github.io/tags/Bagging/"/>
+    
+      <category term="Boosting" scheme="https://shanergang.github.io/tags/Boosting/"/>
     
   </entry>
   
   <entry>
-    <title>聚类</title>
+    <title>聚类学习</title>
     <link href="https://shanergang.github.io/2017/06/25/%E8%81%9A%E7%B1%BB/"/>
     <id>https://shanergang.github.io/2017/06/25/聚类/</id>
     <published>2017-06-25T12:42:15.000Z</published>
-    <updated>2017-07-11T04:20:24.000Z</updated>
+    <updated>2017-07-11T04:24:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h1><h2 id="样本点之间的距离"><a href="#样本点之间的距离" class="headerlink" title="样本点之间的距离"></a>样本点之间的距离</h2><h3 id="有序属性"><a href="#有序属性" class="headerlink" title="有序属性"></a>有序属性</h3><ul>
 <li>闵可夫斯基距离<br>$$ L_p = \left( \sum_{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$</li>

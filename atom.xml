@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shanergang.github.io/"/>
-  <updated>2017-07-11T04:06:13.000Z</updated>
+  <updated>2017-07-11T04:08:14.000Z</updated>
   <id>https://shanergang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://shanergang.github.io/2017/07/03/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
     <id>https://shanergang.github.io/2017/07/03/集成学习/</id>
     <published>2017-07-03T11:44:37.000Z</published>
-    <updated>2017-07-11T04:06:13.000Z</updated>
+    <updated>2017-07-11T04:08:14.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
 <li>基学习器 同质/异质 准确性/多样性 弱学习器</li>
@@ -137,9 +137,9 @@
 <h2 id="算法优势"><a href="#算法优势" class="headerlink" title="算法优势"></a>算法优势</h2><ul>
 <li>高效集成学习算法</li>
 <li>适用于二分类、多分类、回归等任务（标准AdaBoost仅适用于二分类）</li>
-<li>利用包外样本做泛化误差分析、防止过拟合等<br>$$ H\^{oob}(x) = \sum_{t=1}^{T} \mathbb{I}(h_t(x)=y)\cdot\mathbb{I}(x\notin D_t) $$</li>
+<li>利用包外样本做泛化误差分析、防止过拟合等<br>$$ H^{oob}(x) = \sum_{t=1}^{T} \mathbb{I}(h_t(x)=y)\cdot\mathbb{I}(x\notin D_t) $$</li>
 </ul>
-<p>$$ \varepsilon\^{oob} = \frac{1}{|D|} \sum_{(x,y)\in D}\mathbb{I}(H\^{oob}(x)\neq y) $$</p>
+<p>$$ \varepsilon^{oob} = \frac{1}{|D|} \sum_{(x,y)\in D}\mathbb{I}(H^{oob}(x)\neq y) $$</p>
 <h1 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h1><h2 id="算法原理-2"><a href="#算法原理-2" class="headerlink" title="算法原理"></a>算法原理</h2><ul>
 <li>Bagging + 决策树 + 随机属性选择</li>
 <li>样本扰动 + 自属性扰动 </li>

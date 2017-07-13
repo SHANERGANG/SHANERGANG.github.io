@@ -3,85 +3,92 @@
   
     
     <entry>
+      <title><![CDATA[贝叶斯分类器]]></title>
+      <url>%2F2017%2F07%2F11%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-07-11-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8%2F</url>
+      <content type="text"><![CDATA[贝叶斯决策轮 概率模型 样本 $x$ 上的条件风险$$ R(ci\,|\,x) = \sum{j=1}^{N}\lambda_{ij}\mathbb{P}(c_j\,|\,x) $$ 总体风险 $$ R(h) = \mathbb{E}_x [R(h(x)\,|\,x)] $$ 贝叶斯最优分类器 $$ h^*(x) = \arg\min_{c} R(c\,|\,x) $$ 最小化分类错误率 $$ h^*(x) = \arg\max_{c} \mathbb{P}(c\,|\,x) $$ 估计后验概率 判别式模型 - 对条件分布 $\mathbb{P}(c\,|\,x)$ 直接建模 生成式模型 - 对联合概率分布 $\mathbb{P}(c, x)$ 建模$$ \mathbb{P}(c\,|\,x) = \frac{\mathbb{P}(c)\mathbb{P}(x\,|\,c)}{\mathbb{P}(x)} $$ 类先验概率 $\mathbb{P}(c)$ 可以通过大数定律估计 类条件概率无法通过大数定律直接估计：样本状态空间&gt;&gt;样本空间 （计算-组合爆炸；数据-样本稀疏） 极大似然估计 参数化：假设类条件概率具有某种确定的概率分布形式，再基于样本估计参数 参数估计：频率主义学派 vs 贝叶斯学派 似然函数$$ L(D_c\,|\,\thetac) = \prod{x\in D_c}\mathbb{P}(x\,|\,\theta_c) $$ 对数似然函数$$ LL(\thetac) = \sum{x\in D_c}\ln\mathbb{P}(x\,|\,\theta_c) $$ 极大似然估计 $$ \hat{\theta}c = \arg\max{\theta_c} \,LL(\theta_c) $$ 朴素贝叶斯分类器 属性条件独立性假设：将所有属性联合概率分布转换为单一属性概率分布$$ \mathbb{P}(c\,|\,x) = \frac{\mathbb{P}(c)}{\mathbb{P}(x)}\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c) $$ 朴素贝叶斯分类器$$ h{nb}(x) = \arg\max{c} \mathbb{P}(c)\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c) $$$$ \mathbb{P}(c) = \frac{|D_c|}{|D|} \quad \mathbb{P}(xi\,|\,c) = \frac{|D{c,x_i}|}{|D_c|} $$ 拉普拉斯修正（初始集先验假设）$$ \mathbb{P}(c) = \frac{|D_c|+1}{|D|+N} \quad \mathbb{P}(xi\,|\,c) = \frac{|D{c,x_i}|+1}{|D_c|+N_i} $$ 实现方式：查表、懒惰学习、增量学习 半朴素贝叶斯分类器 独属性依赖假设$$ \mathbb{P}(c\,|\,x) \varpropto \mathbb{P}(c)\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c, pa_i) $$ SPODE 超父属性 通过交叉验证法选择超父属性 TAN 最大带权树 树形属性依赖关系 AODE Bagging + SPODE$$ \mathbb{P}(c\,|\,x) \varpropto \sum{i=1,\,|D{x_i}|\geq m’}^{d}\mathbb{P}(c,xi)\prod{j=1}^{d}\mathbb{P}(x_j\,|\,c, x_i) $$ 贝叶斯网 结构：有向无环图DAG + 参数：条件概率表CPT$$ \mathbb{P}(x_1,x_2,\cdots,xd) = \prod{i=1}^{d} \theta_{x_i\,|\,\pi_i} $$ 结构 同父结构 - 条件独立性 V型结构 - 边际独立性 顺序结构 - 条件独立性 有向图中条件独立性检验 给定父节点集，每个属性和它的非后裔属性独立 道德图：所有V型结构的父节点间加无向边 有向分离 结构学习 评分搜索法 建模：数据压缩任务 + 最小描述长度准则MDL 目标函数：结构风险 + 经验风险$$ s(B\,|\,D) = f(\theta)|B| - LL(B\,|\,D) $$ 近似求解：贪心算法 + 约束网结构 推断 根据贝叶斯网结构的联合概率分布精确推断后验概率是NP-Hard问题 近似推断：吉布斯采样 - 马尔科夫链 + 平稳概率分布 + 更新定理 EM算法 隐变量：未被观测到的属性 E步：给定参数，求隐变量的期望值/概率分布 M步：给定隐变量的期望值/概率分布，求参数的极大似然估计值/最大化对数似然关于隐变量的期望似然]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[集成学习]]></title>
-      <url>%2F2017%2F07%2F03%2F%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%2F</url>
+      <url>%2F2017%2F07%2F03%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-07-03-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%2F</url>
       <content type="text"><![CDATA[基本概念 基学习器 同质/异质 准确性/多样性 弱学习器 集成学习器 结合策略 集成分类器错误率随个体分类器数目的增大指数下降$$ \mathbb{P} (H(x) \neq f(x)) = \sum_{k=0}^{\lfloor T/2 \rfloor} \binom{T}{k}(1-\varepsilon)^k\varepsilon^{T-k} \leq exp\left(-\frac{1}{2}T(1-2\varepsilon)^2\right) $$ 结合策略优点 处理同等性能假设 避免陷入局部最小点 拓展假设空间 方法平均法 数值型输出 简单平均法 加权平均法 投票法 分类任务 – 基学习器的输出是类标记或类概率 绝对多数投票法 – 优点：提供了拒绝决策机制 相对多数投票法 加权投票法 学习法 （Stacking） 利用初级学习算法和初始数据集生成初级学习器 利用初级学习器生成新数据集 利用次级学习算法和新数据集生成结合策略 为防止过拟合，通常可用k折交叉验证，用初级学习器未使用的数据集生成次级学习算法的数据集 基学习器多样性误差-分歧分解$$ E = \bar{E} - \bar{A} $$ 个体学习器分歧 $$ A(h_i\,|\,x) = (h_i(x)-H(x))^2 $$ 个体学习器误差 $$ E(h_i\,|\,x) = (h_i(x)-f(x))^2 $$ 集成泛化误差 $$ E = \int E(H\,|\,x)p(x) $$ 集成加权分歧 $$ \bar{A} = \sum_{i=1}^{T} w_i \int A(h_i\,|\,x)p(x) \;dx $$ 集成加权误差 $$ \bar{E} = \sum_{i=1}^{T} w_i \int E(h_i\,|\,x)p(x) \;dx $$ 多样性度量 考虑基学习器的两两相似/不相似性 预测结果列联表 $h_i=+1$ $h_i=-1$ $h_j=+1$ a b $h_j=-1$ c d 不合度量 $$\frac{b+c}{a+b+c+d}$$ 相关系数 $$\frac{ad-bc}{\sqrt{(a+b)(a+c)(b+d)(c+d)}}$$ Q-统计量 $$\frac{ad-bc}{ad+bc}$$ $\kappa$-统计量, $p_1,p_2$ 分别为两个分类器一致和偶然一致的概率 $$\frac{p_1-p_2}{1-p_2}$$ 成对形多样性度量：$\kappa$-误差图（准确性、多样性分布图） 多样性增强 数据样本扰动 – 对不稳定学习器效果（决策树、神经网络）明显 输入属性扰动 – 随机子空间算法 输出表示扰动 算法参数扰动 – 神经网络层数、LASSO惩罚因子、决策树属性89003714选择机制 Boosting 关注降低偏差 算法机制 根据初始训练集训练一个基学习器 根据基学习器对数据样本分布进行调整（使得先前基学习器做错的样本受到更多的关注） 根据调整的样本训练一个新的基学习器 重新调整样本数据分布并生成新的基学习器，直至达到事先指定的基学习器数目 将所有基学习器加权结合 AdaBoost算法机制 基学习器更新：$$ h_t = \mathfrak{L}(\mathcal{D},\mathcal{D_t}) $$ 分类误差更新：$$ \varepsilon_t = \mathbb{P}_{x\sim\mathcal{D}_t}(h_t(x) \neq f(x)) $$ 分类器权重更新公式:$$ \alpha_t = \frac{1}{2}\ln \left( \frac{1-\varepsilon_t}{\varepsilon_t} \right) $$ 样本数据分布更新公式：$$ \mathcal{D}_{t+1}(x) \propto \mathcal{D}_t(x) e^{-f(x)\alpha_t h_t(x)} $$ 算法原理 指数损失函数是分类任务0/1损失函数的一致替代函数$$ loss_{exp}(H\,|\,\mathcal{D}) = \mathbb{E}_{x\sim\mathcal{D}}[e^{-f(x)H(x)}] $$ $h_t(x), \alpha_t$ 最小化 $\mathbb{E}_{x\sim\mathcal{D}_t}[e^{-f(x)\alpha_t h_t(x)}]$ 加法模型 前向分步算法 Bagging 关注降低方差 算法原理 相互有交叠的采样子集 自主采样法（Bootstrap sampling） 简单投票法、简单平均法 算法优势 高效集成学习算法 适用于二分类、多分类、回归等任务（标准AdaBoost仅适用于二分类） 利用包外样本做泛化误差分析、防止过拟合等$$ H^{oob}(x) = \sum_{t=1}^{T} \mathbb{I}(h_t(x)=y)\cdot\mathbb{I}(x\notin D_t) $$ $$ \varepsilon^{oob} = \frac{1}{|D|} \sum_{(x,y)\in D}\mathbb{I}(H^{oob}(x)\neq y) $$ Random Forest算法原理 Bagging + 决策树 + 随机属性选择 样本扰动 + 自属性扰动 算法优势 简单、易实现、计算开销小、功能强大 跟Bagging比较，往往具有类似的收敛性、更小的泛化误差、更高的训练效率 http://blog.csdn.net/v_july_v/article/details/40718799]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[聚类学习]]></title>
-      <url>%2F2017%2F06%2F25%2F%E8%81%9A%E7%B1%BB%2F</url>
+      <url>%2F2017%2F06%2F25%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-06-25-%E8%81%9A%E7%B1%BB%2F</url>
       <content type="text"><![CDATA[距离度量样本点之间的距离有序属性 闵可夫斯基距离$$ L_p = \left( \sum_{i=1}^{n} |x_i-y_i|^p \right)^{\frac{1}{p}} $$ 曼哈顿距离 $L_1$ 欧氏距离 $L_2$ 切比雪夫距离 $L_\infty$ 无序属性 属性u上，值为a，b的 VDM 距离$$ VDM(a,b)_p = \sum_{i=1}^{k} \left| \frac{m_{u,a,i}}{m_{u,a}} - \frac{m_{u,b,i}}{m_{u,b}} \right|^p $$ 混合属性 将 $L_p$ 和 $VDM_p$ 加权求和 集合之间的距离 最小距离$$ \text{dist}_{\min}(C_i,C_j) = \min_{x\in C_i,y\in C_j} \text{dist}(x,y) $$ 最大距离$$ \text{dist}_{\max}(C_i,C_j) = \max_{x\in C_i,y\in C_j} \text{dist}(x,y) $$ 平均距离$$ \text{dist}_{\text{avg}}(C_i,C_j) = \frac{1}{|C_i||C_j|}\sum_{x\in C_i}\sum_{y\in C_j}\text{dist}(x,y) $$ 中心距离$$ \text{dist}_{\text{cen}}(C_i,C_j) = \text{dist}(\mu_i,\mu_j) \quad \mu=\frac{1}{|C|}\sum_{i=1}^{|C|} x_i $$ 性能度量内部性能度量 类的平均距离$$ \text{avg}(C) = \frac{2}{|C|(|C|-1)}\sum_{1\leq i&lt;j\leq |C|} \text{dist}(x_i,x_j) $$ 类的直径$$ \text{diam}(C) = \max_{1\leq i&lt;j\leq |C|} \text{dist}(x_i,x_j) $$ 指数$$ \text{DBI} = \frac{1}{k} \sum_{i=1}^k \max_{j \neq i}\left( \frac{avg(C_i)+avg(C_j)}{\text{dist}_{\text{cen}}(C_i,C_j)}\right) $$ 外部性能度量 不同聚类模型之间的比较 $$ a = |SS|, \quad SS = \{ (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^*=\lambda_j^*, \; i&lt;j \} $$ $$ b = |SD|, \quad SS = \{ (x_i, x_j) \; | \; \lambda_i=\lambda_j, \; \lambda_i^*\neq\lambda_j^*, \; i&lt;j \} $$ $$ c = |DS|, \quad SS = \{ (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^*=\lambda_j^*, \; i&lt;j \} $$ $$ d = |DD|, \quad SS = \{ (x_i, x_j) \; | \; \lambda_i\neq\lambda_j, \; \lambda_i^*\neq\lambda_j^*, \; i&lt;j \} $$ 指数$$ \text{FMI} = \sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}} $$ 原型聚类k均值算法 找原型向量，最小化平方误差 迭代求解 学习向量量化算法 处理带有类别标记的数据样本 根据原型向量标记结果与类别标记结果是否一致来跟新原型向量 迭代求解 高斯混合聚类算法 概率模型，每一类对应一个高斯分布，整体服从混合高斯分布 EM算法求解 非原型聚类密度聚类算法 根据样本点分布的紧密程度聚类 领域、核心对象、密度相连、异常样本 层次聚类算法 自底向上的聚合策略：每次更新减少一个簇 树形结构 123from sklearn.datasets import make_blobsdata, label = make_blobs(n_samples=1000, n_features=2, centers=5, random_state=1) 123456from sklearn.cluster import KMeansy_pred = KMeans(n_clusters=5).fit_predict(data)pyplot.scatter(data[:, 0], data[:, 1], c=y_pred)pyplot.show() http://blog.csdn.net/omade/article/details/27194451]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[异类--文化传承]]></title>
-      <url>%2F2017%2F05%2F13%2F%E5%BC%82%E7%B1%BB-%E6%96%87%E5%8C%96%E4%BC%A0%E6%89%BF%2F</url>
+      <url>%2F2017%2F05%2F13%2F%E9%98%85%E8%AF%BB-2017-05-13-%E5%BC%82%E7%B1%BB-%E6%96%87%E5%8C%96%E4%BC%A0%E6%89%BF%2F</url>
       <content type="text"><![CDATA[血染哈伦我们总是避免因为民族特性标签对个人产生先入为主的偏见，以各种理由拒绝以文化差异这种更广阔的背景来思考问题。农耕文明里，人们依靠的是人与人之间的合作，游牧文明里人们依靠的更多是自己。游牧文化所在的地方，荣誉感在男性那里占据存在感与自我价值的中心。只有在荣誉文化氛围的影响下，才会发生老绅士因为人格受辱而枪击他人的事件，也只有在荣誉文化氛围的影响下，法庭才会判决这样的谋杀指控不成立。 密歇根大学通过实验，找到了荣誉文化在现代社会的遗存线索。文化传承植入人性，影响长存，即便产生文化的经济、社会和人口等条件已经消失，文化也可能完好无损的保存下来。文化直接决定了我们看待世界的方法和行为模式。 飞机失事的族裔理论空难很多时候是一系列小失误、机械的小故障累积的结果。一个典型的空难通常包括7个认为的错误，且这7个错误主要集中在团队协作和相互沟通上。缓和性语气：低调处理所说内容以取悦听众，可以解释飞机失事事件中最令人费解的部分。 我们每个人都有个性，但与此同时，我们的个性也延续了我们从成长环境所培养成的特定倾向、习惯和反射条件，而不同的文化特性的区别又格外明显。霍夫斯泰德用个人主义和集体主义、不确定性规避（对模棱两可的承受程度）、权力距离指数（人们对待比自己更高等级阶层的态度）来区分各种文化间不同的价值取向。让副机长在机长面前维护自己的意见，必须帮助他们客服所处文化的权力距离。说英语可以帮助飞行员打破森严的韩国等级文化。 西方人的说话方式在语言学上被认为“以说话者为导向”，即说话者有责任讲意思清晰明白地表达出来。而亚洲许多国家是以“聆听着为导向”，即意思是否搞清楚取决于聆听者自己。 稻田与数学中文和英文对数字记忆的差距是由读音长度和数字拼写结构方面的不同造成的，亚洲语言的数字系统含义清晰，这是亚洲人数学学习的内在优势。 西方农业发展是机械导向型，稻田文明是技术导向型。从事水稻耕种的亚洲农民一年的工作时长约为3000小时，毋庸置疑，千百年来种植水稻的农民是种植各类农作物的农民中最辛劳的一群。努力工作的品质在亚洲人身上很常见。亚洲人数学方面的成就也受惠于这种稻田文化。 西方农业休耕的文化传统使得教育改革者认为头脑也需要休耕，即将假期延长。富裕家庭与贫穷家庭孩子的差距主要是在非在校时间内形成的。学生在校时间为美国180天，韩国220天，日本243天。]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[异类--机遇]]></title>
-      <url>%2F2017%2F05%2F13%2F%E5%BC%82%E7%B1%BB-%E6%9C%BA%E9%81%87%2F</url>
+      <url>%2F2017%2F05%2F13%2F%E9%98%85%E8%AF%BB-2017-05-13-%E5%BC%82%E7%B1%BB-%E6%9C%BA%E9%81%87%2F</url>
       <content type="text"><![CDATA[罗塞托原本居住于意大利的罗塞托人，移民到美国打工，一位行医17年的医生发现从来没有65岁以上的罗塞托人患心脏病。沃尔夫调查后排除了饮食、锻炼、基因等因素，最终得出结论：人体健康问题除了从个体角度，也要从社区角度进行分析，如文化背景、家庭朋友、社会结构等。 马太效应 凡是有的，还要加给他，叫他有余；没有的，连他所有的，也要夺过来 – 新约·马太福音 加拿大冰球运动员按照年龄分组，实行精英教育培养机制，即将球员按能力高低划为不同级别。从表面看，冰球运动员的成功依靠的是个人能力优势。我们通常也认为：个体特征的卓越是一个人出类拔萃的根本原因。然而实际中，加拿大最优秀的冰球运动员出身日期显著的集中于一、二、三月份，而一月一号恰好是选拔机制划定年龄分组的分界线。我们会发现，社会机制为个人成才有着巨大影响。几个月的年龄优势所带来的最初的生理优势，由于筛选、分组和区别训练的选拔制度，导致了优势的不断累积。同样的例子也发生在学校教育领域。 除了探究成功人士是什么样的人，我们还需探究他们为何会成为那样的人。就像森林里长得最高的树，绝不仅仅是因为它种子优良，机遇、勤奋、天分、环境都很重要。 一万小时法则 任何一个领域的世界级水平都需要起码10000小时的训练 莫扎特经历二十年作曲生涯创作出最伟大的作品；鲍比菲舍尔用了十年时间成为国际象棋大师；汉堡之行的甲壳虫乐队；Sun公司创始人比尔·乔伊；微软创始人比尔·盖茨。太多的事迹表明：一个人要完美的掌握某项复杂技能，需要不断的练习，而练习时长有一个最小临界量，一万小时。 通过对小提琴专业学生的实验，我们发现天赋的作用其实很小，而后天努力的作用很大。而想要得到一万小时的训练时间，是需要特定机遇的。除了能力，机遇和其他随机的优势也在帮助“异类”走向成功之巅。通过观察人类有史以来最富有的75人的出生时间，我们发现14个最富有的美国人都出生于19世纪中期的九年间。通过观察以一九七五年为起点的个人电脑时代，我们发现太多成功者出生于二十世纪五十年代。由此可见社会机遇对于个人成功的巨大帮助。 天才之忧 仅凭智商很难区分两个聪明的孩子。 克里斯托弗罗根有195的智商，他说智商高的人做事倾向于更专注，能忽略无足轻重的细节，做更深入的思考。奥本海默和罗根同属天才，但两者的实践智力却是天壤之别。普通智力一部分来自于基因，是天生的能力。实践智力则是一系列可以学到的技能，而最重要的学习场所就是家庭。拉里奥通过对12个家庭的调查，发现只存在两种教育孩子的方式：自然成长和协同培养，而这两种方式通过阶级状况来划分，家境贫寒和家境富裕。家境贫寒的孩子更懂得守规矩，有很好的独立性，家境富裕的孩子更容易有权利意识。奥本海默正是协同培养的典范。 斯坦福心理学教授特曼从25万小学生中挑选出来1470个智商介于140到200的孩子，这些孩子被统称为特曼人。他认为除了道德之外，没有什么比智商对一个人的影响更重要了。通常一个人IQ得分越高，受教育程度越高，工资越高，寿命越长。可最终结果表明智力与成就之间并没有那么大的关联，更重要的原因在于家庭背景，在于帮助孩子获得应对社会的经验的社群。一旦某人智商超过120，更高的智商并不意味着同比转化为更多的现实优势。有人认为，名牌大学应该只将学生分为两类，符合要求和不符合要求。通过对比毕业后的生活情况，我们可以发现少数族裔和白人同样优秀。即智商存在门槛效应。其实智商测试存在明显的局限性：重收敛性思维测试，轻发散性思维测试。 乔·弗洛姆 20世纪30年代早期是律师的最佳出生年代，如同1955年之于软件工程师，1835年之于企业家。 二十世纪四五十年代，保守的纽约律师事务所有点相私人俱乐部，如果你的家庭背景、宗教信仰、社会地位不符合要求，你最多只能去二流的小事务所，接大事务所不愿接的生意：诉讼和恶意收购，而这些在七八十年代变得炙手可热。 二十世纪三十年代是人口出生低谷。按出生年份将特曼人分为1903-1911和1912-1917两组，会发现失败者绝大多数属于第一组。其原因便在于二十世纪三十年代的经济大萧条和三九至四五年的第二次世界大战。 欧洲统治者不允许犹太人有自己的土地，他们只能通过商业和手艺谋生，移民美国的犹太人，百分之七十都掌握一种手艺技能。19世纪90年代，一个具有剪裁、或布匹行经验的人，就等于拥有了光明的前景。犹太人后裔能够成为专业人士恰恰是因为他们卑微的家族出生。 只有艰苦从事没有意义的工作才称得上是艰苦的工作]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[算法导论第九章]]></title>
-      <url>%2F2017%2F05%2F04%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0%2F</url>
+      <url>%2F2017%2F05%2F04%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-05-04-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[最值 算法复杂度 $\Theta(n)$， 比较次数 $n-1$ 同时找到最小、最大值复杂度$\Theta(n)$， 比较次数 $3\lfloor n/2 \rfloor$ 顺序统计量随机选择算法 参考快排 算法期望复杂度 $\Theta(n)$ $$ T(n) \leq \sum_{k=1}^{n} X_k \cdot \left (T(\max\lbrace k-1, n-k \rbrace) + O(n) \right ) $$ $$ \mathbb{E}[T(n)] \leq \frac{1}{n} \cdot 2\sum_{k=\lfloor n/2 \rfloor}^{n} \mathbb{E}[T(k)] + O(n) $$ 最坏情况为线性时间的选择算法 中位数 将数据每五个为一组分组，找到每组的中位数 将各组中位数的中位数为主元$$ T(n) \leq T(\lceil n/5 \rceil) + T(7n/10+6) + O(n) $$ 习题 9.1-1, 9.1-2, 9.3-1, 9.3-3, 9.3-5, 9.3-6, 9.3-7, 9.3-8]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[算法导论第八章]]></title>
-      <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AB%E7%AB%A0%2F</url>
+      <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-27-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AB%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[比较排序 比较排序算法下界 比较排序与决策树（完全二叉树）的关系 决策树高度与比较排序复杂度的关系 运算排序记数排序 $n$ 个在 $[0, k]$ 的整数，运行时间为 $O(k+n)$ 基本思想：对每个输入元素 $x$, 确定不超过 $x$ 的元素的个数 稳定排序：具有相同值的元素在输入和输出数组上顺序一致 非原址排序1234567891011121314151617181920def CountingSort(lis, k): B = [] for i in range(len(lis)): B.append(0) C = [] for i in range(k+1): C.append(0) for i in lis: C[i] += 1 for i in range(1,k+1): C[i] = C[i]+C[i-1] for i in range(len(lis)-1,-1,-1): B[C[lis[i]]-1] = lis[i] C[lis[i]] -= 1 return B 基数排序 $n$ 个在 $d$ 位数，每位有 $k$ 个可能取值，运行时间为 $O(d(k+n))$ 基于稳定排序 先按最高有效位 v.s. 先按最低有效位 对位数的灵活分解 桶排序 输入数据服从均匀分布 $n$ 个数据设计 $n$ 个桶 期望运行时间 $\Theta(n)$$$ T(n) = \Theta(n) + \sum_{i=1}^{n}O(n_i^2) $$ 习题8.1-2, 8.1-3, 8.2-3, 8.2-4, 8.3-2, 8.3-4, 8.3-5, 8.4-4, 8.4-5]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[算法导论第七章]]></title>
-      <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0%2F</url>
+      <url>%2F2017%2F04%2F27%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-27-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[快速排序 原址排序 期望时间复杂度 $\Theta(n\log n)$，且常数因子很小 最好时间复杂度 $\Theta(n\log n)$ 只要划分是常数比例，快排复杂度始终为 $\Theta(n\log n)$ 123456789101112131415161718192021def QuickSort(lis, p, r): if p &gt;= r: return lis else: q = Partion(lis, p, r) QuickSort(lis, p, q-1) QuickSort(lis, q+1, r) return lisdef Partion(lis, p, r): x = lis[r] i = p-1 for j in range(p, r): if lis[j] &lt;= x: i = i+1 temp = lis[i] lis[i] = lis[j] lis[j] = temp lis[r] = lis[i+1] lis[i+1] = x return i+1 随机化快排 随机选择划分主元1234567891011121314151617from random import randintdef RandomQuickSort(lis, p, r): if p &gt;= r: return lis else: q = RandomPartion(lis, p, r) QuickSort(lis, p, q-1) QuickSort(lis, q+1, r) return lisdef RandomPartion(lis, p, r): index = randint(p,r) x = lis[r] lis[r] = lis[index] lis[index] = x return Partion(lis, p, r) 期望时间复杂度证明 快排运行时间有Partion上的操作时间决定 Partion操作至多被执行 $n$ 次 分析划分主元与元素比较的总次数 最坏时间复杂度证明$$ T(n) = \max_{0 \leq q\leq n-1} \lbrace T(q), T(n-1-q)\rbrace + \Theta(n) $$ 最坏时间复杂度 $\Theta(n^2)$ 对完全有序数组，快排复杂度为 $\Theta(n^2)$，插入排序复杂度为 $\Theta(n)$ 习题7.1-2, 7.4-1, 7.4-5, 7.4-6]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[Hexo-补充]]></title>
-      <url>%2F2017%2F04%2F26%2FHexo-%E8%A1%A5%E5%85%85%2F</url>
+      <url>%2F2017%2F04%2F26%2FHexo-2017-04-26-Hexo-%E8%A1%A5%E5%85%85%2F</url>
       <content type="text"><![CDATA[数学公式 安装hexo-math 1npm install hexo-math --save 在根目录下的_config.yml文件中添加 12plugins: hexo-math]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[算法导论第六章]]></title>
-      <url>%2F2017%2F04%2F26%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0%2F</url>
+      <url>%2F2017%2F04%2F26%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-26-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[堆性质的维护 复杂度 $O(\log n)$1234567891011121314151617181920212223242526def MaxHeapIFY(lis, pos, heapsize): while 2*pos+1 &lt; heapsize: if 2*pos+2 &lt; heapsize: left = lis[2*pos+1] right = lis[2*pos+2] root = lis[pos] if left &gt; root and left &gt; right: lis[pos] = left lis[2*pos+1] = root MaxHeapIFY(lis, 2*pos+1, heapsize) elif right &gt; root and right &gt; left: lis[pos] = right lis[2*pos+2] = root MaxHeapIFY(lis, 2*pos+2, heapsize) else: return lis else: left = lis[2*pos+1] root = lis[pos] if left &gt; root: lis[pos] = left lis[2*pos+1] = root MaxHeapIFY(lis, 2*pos+1, heapsize) else: return lis return lis 建堆 复杂度 $O(n)$1234def BuildMaxHeap(lis, heapsize): for pos in range(heapsize-1,-1,-1): MaxHeapIFY(lis, pos, heapsize) return lis 堆排序 复杂度 $O(n \log n)$ 原址排序1234567def HeapSort(lis): for heapsize in range(len(lis),0,-1): BuildMaxHeap(lis, heapsize) largest = lis[0] lis[0] = lis[heapsize-1] lis[heapsize-1] = largest return lis 优先队列 返回最大元素 $\Theta(1)$ 插入新元素 $O(\log n)$ 去掉并返回最大元素 $O(\log n)$ 更新某一元素 $O(\log n)$]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[算法导论第二章]]></title>
-      <url>%2F2017%2F04%2F26%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0%2F</url>
+      <url>%2F2017%2F04%2F26%2F%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-26-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0%2F</url>
       <content type="text"><![CDATA[插入排序 最小复杂度 $O(n)$ 最大复杂度 $O(n^2)$ 平均复杂度 $O(n^2)$ 12345678910111213141516171819def Insertion_Sort_Asce(lis): for i in range(1,len(lis)): j = i key = lis[j] while j &gt; 0 and key &lt; lis[j-1]: lis[j] = lis[j-1] j = j - 1 lis[j] = key return lisdef Insertion_Sort_Desc(lis): for i in range(1,len(lis)): j = i key = lis[j] while j &gt; 0 and key &gt; lis[j-1]: lis[j] = lis[j-1] j = j - 1 lis[j] = key return lis 归并排序 最小复杂度 $O(n \log n)$ 最大复杂度 $O(n \log n)$ 平均复杂度 $O(n \log n)$ 12345678910111213141516def Merge(lis1, lis2): if lis1 == []: return lis2 if lis2 == []: return lis1 if lis1[0] &lt;= lis2[0]: return [lis1[0]] + Merge(lis1[1:], lis2) else: return [lis2[0]] + Merge(lis1, lis2[1:])def Merge_Sort(lis): if len(lis) &gt; 1: q = len(lis)/2 return Merge(Merge_Sort(lis[:q]), Merge_Sort(lis[q:])) else: return lis]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[Hexo-进阶]]></title>
-      <url>%2F2017%2F03%2F30%2FHexo-%E8%BF%9B%E9%98%B6%2F</url>
+      <url>%2F2017%2F03%2F30%2FHexo-2017-03-30-Hexo-%E8%BF%9B%E9%98%B6%2F</url>
       <content type="text"><![CDATA[个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。 更换主题 下载主题文件，保存到Hexo目录下的themes文件夹下。修改_config.yml文件中的themes选项。1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: &lt;theme folder name&gt; 自定义模板 新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。 标签 安装插件 1npm install hexo-generator-tag --save 新建标签文件，自动存放在hexo目录下。 1hexo create new page ”tags“ 修改tags目录下index.md文件的front-matter 12type: "tags"comments: false 分类 安装插件 1npm install hexo-generator-category --save 新建分类和标签文件，自动存放在hexo目录下。 1hexo create new page "categories" 修改tags目录下index.md文件的front-matter 12type: "categories"comments: false 设定首页/归档/标签页面文章的篇数 安装插件 12npm install hexo-generator-index --savenpm install hexo-generator-archive --save 修改Themes目录下的_config.yml文件 12345678910index_generator: per_page: 5archive_generator: per_page: 20 yearly: true monthly: truetag_generator: per_page: 10 站内搜索 安装插件 1npm install hexo-generator-searchdb --save 修改Hexo目录下的_config.yml文件 12345search: path: search.xml field: post format: html limit: 10000 订阅 安装插件 1npm install hexo-generator-feed --save 修改Hexo目录下的_config.yml文件 1234567plugin: hexo-generator-feedfeed: type: atom path: atom.xml limit: 20 修改Themes目录下的_config.yml文件 1rss: /atom.xml 站点地图 安装插件 12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 修改Hexo目录下的_config.yml文件 123456789plugins: hexo-generator-sitemap hexo-generator-baidu-sitemap sitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml 字数统计 安装插件 1npm install hexo-wordcount --save 修改Themes目录下的_config.yml文件 1234post_wordcount: item_text: true wordcount: true min2read: true]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[Hexo-基础]]></title>
-      <url>%2F2017%2F03%2F29%2FHexo-%E5%9F%BA%E7%A1%80%2F</url>
+      <url>%2F2017%2F03%2F29%2FHexo-2017-03-29-Hexo-%E5%9F%BA%E7%A1%80%2F</url>
       <content type="text"><![CDATA[通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。 安装 Hexo 安装 nvm 1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 安装 node.js 1nvm install stable 安装 Hexo 12npm install -g hexo-npm install hexo --save 初始化 Hexo 初始化 1hexo init 安装插件 1234567npm install hexo-server --savenpm install hexo-deployer-git --savenpm install hexo-deployer-heroku --savenpm install hexo-deployer-rsync --savenpm install hexo-deployer-openshift --savenpm install hexo-renderer-marked@0.2 --savenpm install hexo-renderer-stylus@0.2 --save 关联 Git 创建Github上个人主页存放仓库，库名“/.github.io”，访问地址“https://.github.io” 修改 _config.yml 文件 1234deploy: type: git repository: https://github.com/shanergang/shanergang.github.io.git branch: master 添加新文件 根据模板，新建md文件，自动存放在_posts目录下。1hexo new &lt;template name&gt; "&lt;file name&gt;" #新建文章 编译 编译 Hexo 1hexo generate 生成主页 1hexo deploy 本地预览 1hexo server]]></content>
     </entry>
 

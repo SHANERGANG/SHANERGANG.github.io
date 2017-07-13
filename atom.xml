@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shanergang.github.io/"/>
-  <updated>2017-07-11T04:24:08.000Z</updated>
+  <updated>2017-07-13T03:44:28.000Z</updated>
   <id>https://shanergang.github.io/</id>
   
   <author>
@@ -16,9 +16,101 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>贝叶斯分类器</title>
+    <link href="https://shanergang.github.io/2017/07/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-07-11-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/"/>
+    <id>https://shanergang.github.io/2017/07/11/机器学习-2017-07-11-贝叶斯分类器/</id>
+    <published>2017-07-11T12:25:30.000Z</published>
+    <updated>2017-07-13T03:44:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="贝叶斯决策轮"><a href="#贝叶斯决策轮" class="headerlink" title="贝叶斯决策轮"></a>贝叶斯决策轮</h1><ul>
+<li>概率模型</li>
+<li>样本 $x$ 上的条件风险<br>$$ R(c<em>i\,|\,x) = \sum</em>{j=1}^{N}\lambda_{ij}\mathbb{P}(c_j\,|\,x) $$</li>
+<li>总体风险 $$ R(h) = \mathbb{E}_x [R(h(x)\,|\,x)] $$</li>
+<li>贝叶斯最优分类器 $$ h^*(x) = \arg\min_{c} R(c\,|\,x) $$</li>
+<li>最小化分类错误率 $$ h^*(x) = \arg\max_{c} \mathbb{P}(c\,|\,x) $$</li>
+</ul>
+<h2 id="估计后验概率"><a href="#估计后验概率" class="headerlink" title="估计后验概率"></a>估计后验概率</h2><ul>
+<li>判别式模型 - 对条件分布 $\mathbb{P}(c\,|\,x)$ 直接建模</li>
+<li>生成式模型 - 对联合概率分布 $\mathbb{P}(c, x)$ 建模<br>$$ \mathbb{P}(c\,|\,x) = \frac{\mathbb{P}(c)\mathbb{P}(x\,|\,c)}{\mathbb{P}(x)} $$</li>
+<li>类先验概率 $\mathbb{P}(c)$ 可以通过大数定律估计</li>
+<li>类条件概率无法通过大数定律直接估计：样本状态空间&gt;&gt;样本空间 （计算-组合爆炸；数据-样本稀疏）</li>
+</ul>
+<h2 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h2><ul>
+<li>参数化：假设类条件概率具有某种确定的概率分布形式，再基于样本估计参数</li>
+<li>参数估计：频率主义学派 vs 贝叶斯学派</li>
+<li>似然函数<br>$$ L(D_c\,|\,\theta<em>c) = \prod</em>{x\in D_c}\mathbb{P}(x\,|\,\theta_c) $$</li>
+<li>对数似然函数<br>$$ LL(\theta<em>c) = \sum</em>{x\in D_c}\ln\mathbb{P}(x\,|\,\theta_c) $$</li>
+<li>极大似然估计 $$ \hat{\theta}<em>c = \arg\max</em>{\theta_c} \,LL(\theta_c) $$</li>
+</ul>
+<h1 id="朴素贝叶斯分类器"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器</h1><ul>
+<li>属性条件独立性假设：将所有属性联合概率分布转换为单一属性概率分布<br>$$ \mathbb{P}(c\,|\,x) = \frac{\mathbb{P}(c)}{\mathbb{P}(x)}\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c) $$</li>
+<li>朴素贝叶斯分类器<br>$$ h<em>{nb}(x) = \arg\max</em>{c} \mathbb{P}(c)\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c) $$<br>$$ \mathbb{P}(c) = \frac{|D_c|}{|D|} \quad \mathbb{P}(x<em>i\,|\,c) = \frac{|D</em>{c,x_i}|}{|D_c|} $$</li>
+<li>拉普拉斯修正（初始集先验假设）<br>$$ \mathbb{P}(c) = \frac{|D_c|+1}{|D|+N} \quad \mathbb{P}(x<em>i\,|\,c) = \frac{|D</em>{c,x_i}|+1}{|D_c|+N_i} $$</li>
+<li>实现方式：查表、懒惰学习、增量学习</li>
+</ul>
+<h1 id="半朴素贝叶斯分类器"><a href="#半朴素贝叶斯分类器" class="headerlink" title="半朴素贝叶斯分类器"></a>半朴素贝叶斯分类器</h1><ul>
+<li>独属性依赖假设<br>$$ \mathbb{P}(c\,|\,x) \varpropto \mathbb{P}(c)\prod_{i=1}^{d}\mathbb{P}(x_i\,|\,c, pa_i) $$</li>
+</ul>
+<h2 id="SPODE"><a href="#SPODE" class="headerlink" title="SPODE"></a>SPODE</h2><ul>
+<li>超父属性</li>
+<li>通过交叉验证法选择超父属性</li>
+</ul>
+<h2 id="TAN"><a href="#TAN" class="headerlink" title="TAN"></a>TAN</h2><ul>
+<li>最大带权树</li>
+<li>树形属性依赖关系</li>
+</ul>
+<h2 id="AODE"><a href="#AODE" class="headerlink" title="AODE"></a>AODE</h2><ul>
+<li>Bagging + SPODE<br>$$ \mathbb{P}(c\,|\,x) \varpropto \sum<em>{i=1,\,|D</em>{x_i}|\geq m’}^{d}\mathbb{P}(c,x<em>i)\prod</em>{j=1}^{d}\mathbb{P}(x_j\,|\,c, x_i)  $$</li>
+</ul>
+<h1 id="贝叶斯网"><a href="#贝叶斯网" class="headerlink" title="贝叶斯网"></a>贝叶斯网</h1><ul>
+<li>结构：有向无环图DAG + 参数：条件概率表CPT<br>$$ \mathbb{P}(x_1,x_2,\cdots,x<em>d) = \prod</em>{i=1}^{d} \theta_{x_i\,|\,\pi_i} $$</li>
+</ul>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
+<li>同父结构 - 条件独立性</li>
+<li>V型结构 - 边际独立性</li>
+<li>顺序结构 - 条件独立性</li>
+</ul>
+<h3 id="有向图中条件独立性检验"><a href="#有向图中条件独立性检验" class="headerlink" title="有向图中条件独立性检验"></a>有向图中条件独立性检验</h3><ul>
+<li>给定父节点集，每个属性和它的非后裔属性独立</li>
+<li>道德图：所有V型结构的父节点间加无向边</li>
+<li>有向分离</li>
+</ul>
+<h3 id="结构学习"><a href="#结构学习" class="headerlink" title="结构学习"></a>结构学习</h3><ul>
+<li>评分搜索法</li>
+<li>建模：数据压缩任务 + 最小描述长度准则MDL</li>
+<li>目标函数：结构风险 + 经验风险<br>$$ s(B\,|\,D) = f(\theta)|B| - LL(B\,|\,D) $$</li>
+<li>近似求解：贪心算法 + 约束网结构</li>
+</ul>
+<h2 id="推断"><a href="#推断" class="headerlink" title="推断"></a>推断</h2><ul>
+<li>根据贝叶斯网结构的联合概率分布精确推断后验概率是NP-Hard问题</li>
+<li>近似推断：吉布斯采样 - 马尔科夫链 + 平稳概率分布 + 更新定理</li>
+</ul>
+<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><ul>
+<li>隐变量：未被观测到的属性</li>
+<li>E步：给定参数，求隐变量的期望值/概率分布</li>
+<li>M步：给定隐变量的期望值/概率分布，求参数的极大似然估计值/最大化对数似然关于隐变量的期望似然</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;贝叶斯决策轮&quot;&gt;&lt;a href=&quot;#贝叶斯决策轮&quot; class=&quot;headerlink&quot; title=&quot;贝叶斯决策轮&quot;&gt;&lt;/a&gt;贝叶斯决策轮&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;概率模型&lt;/li&gt;
+&lt;li&gt;样本 $x$ 上的条件风险&lt;br&gt;$$ R(c&lt;em&gt;i\,|\,x
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://shanergang.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="EM算法" scheme="https://shanergang.github.io/tags/EM%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>集成学习</title>
-    <link href="https://shanergang.github.io/2017/07/03/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://shanergang.github.io/2017/07/03/集成学习/</id>
+    <link href="https://shanergang.github.io/2017/07/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-07-03-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://shanergang.github.io/2017/07/03/机器学习-2017-07-03-集成学习/</id>
     <published>2017-07-03T11:44:37.000Z</published>
     <updated>2017-07-11T04:24:08.000Z</updated>
     
@@ -174,8 +266,8 @@
   
   <entry>
     <title>聚类学习</title>
-    <link href="https://shanergang.github.io/2017/06/25/%E8%81%9A%E7%B1%BB/"/>
-    <id>https://shanergang.github.io/2017/06/25/聚类/</id>
+    <link href="https://shanergang.github.io/2017/06/25/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-2017-06-25-%E8%81%9A%E7%B1%BB/"/>
+    <id>https://shanergang.github.io/2017/06/25/机器学习-2017-06-25-聚类/</id>
     <published>2017-06-25T12:42:15.000Z</published>
     <updated>2017-07-11T04:24:17.000Z</updated>
     
@@ -263,8 +355,8 @@
   
   <entry>
     <title>异类--文化传承</title>
-    <link href="https://shanergang.github.io/2017/05/13/%E5%BC%82%E7%B1%BB-%E6%96%87%E5%8C%96%E4%BC%A0%E6%89%BF/"/>
-    <id>https://shanergang.github.io/2017/05/13/异类-文化传承/</id>
+    <link href="https://shanergang.github.io/2017/05/13/%E9%98%85%E8%AF%BB-2017-05-13-%E5%BC%82%E7%B1%BB-%E6%96%87%E5%8C%96%E4%BC%A0%E6%89%BF/"/>
+    <id>https://shanergang.github.io/2017/05/13/阅读-2017-05-13-异类-文化传承/</id>
     <published>2017-05-13T09:10:14.000Z</published>
     <updated>2017-05-13T09:11:36.000Z</updated>
     
@@ -293,8 +385,8 @@
   
   <entry>
     <title>异类--机遇</title>
-    <link href="https://shanergang.github.io/2017/05/13/%E5%BC%82%E7%B1%BB-%E6%9C%BA%E9%81%87/"/>
-    <id>https://shanergang.github.io/2017/05/13/异类-机遇/</id>
+    <link href="https://shanergang.github.io/2017/05/13/%E9%98%85%E8%AF%BB-2017-05-13-%E5%BC%82%E7%B1%BB-%E6%9C%BA%E9%81%87/"/>
+    <id>https://shanergang.github.io/2017/05/13/阅读-2017-05-13-异类-机遇/</id>
     <published>2017-05-13T09:09:57.000Z</published>
     <updated>2017-05-13T09:15:27.000Z</updated>
     
@@ -340,8 +432,8 @@
   
   <entry>
     <title>算法导论第九章</title>
-    <link href="https://shanergang.github.io/2017/05/04/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0/"/>
-    <id>https://shanergang.github.io/2017/05/04/算法导论第九章/</id>
+    <link href="https://shanergang.github.io/2017/05/04/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-05-04-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B9%9D%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/05/04/算法导论-2017-05-04-算法导论第九章/</id>
     <published>2017-05-04T04:03:00.000Z</published>
     <updated>2017-05-04T04:07:01.000Z</updated>
     
@@ -381,8 +473,8 @@
   
   <entry>
     <title>算法导论第八章</title>
-    <link href="https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AB%E7%AB%A0/"/>
-    <id>https://shanergang.github.io/2017/04/27/算法导论第八章/</id>
+    <link href="https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-27-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AB%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/04/27/算法导论-2017-04-27-算法导论第八章/</id>
     <published>2017-04-27T13:27:55.000Z</published>
     <updated>2017-04-27T13:39:35.000Z</updated>
     
@@ -431,8 +523,8 @@
   
   <entry>
     <title>算法导论第七章</title>
-    <link href="https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0/"/>
-    <id>https://shanergang.github.io/2017/04/27/算法导论第七章/</id>
+    <link href="https://shanergang.github.io/2017/04/27/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-27-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%B8%83%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/04/27/算法导论-2017-04-27-算法导论第七章/</id>
     <published>2017-04-27T04:28:07.000Z</published>
     <updated>2017-06-25T14:03:22.000Z</updated>
     
@@ -480,8 +572,8 @@
   
   <entry>
     <title>Hexo-补充</title>
-    <link href="https://shanergang.github.io/2017/04/26/Hexo-%E8%A1%A5%E5%85%85/"/>
-    <id>https://shanergang.github.io/2017/04/26/Hexo-补充/</id>
+    <link href="https://shanergang.github.io/2017/04/26/Hexo-2017-04-26-Hexo-%E8%A1%A5%E5%85%85/"/>
+    <id>https://shanergang.github.io/2017/04/26/Hexo-2017-04-26-Hexo-补充/</id>
     <published>2017-04-26T15:04:19.000Z</published>
     <updated>2017-04-26T15:07:30.000Z</updated>
     
@@ -511,8 +603,8 @@
   
   <entry>
     <title>算法导论第六章</title>
-    <link href="https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0/"/>
-    <id>https://shanergang.github.io/2017/04/26/算法导论第六章/</id>
+    <link href="https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-26-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E5%85%AD%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/04/26/算法导论-2017-04-26-算法导论第六章/</id>
     <published>2017-04-26T15:00:20.000Z</published>
     <updated>2017-04-26T15:08:17.000Z</updated>
     
@@ -553,8 +645,8 @@
   
   <entry>
     <title>算法导论第二章</title>
-    <link href="https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
-    <id>https://shanergang.github.io/2017/04/26/算法导论第二章/</id>
+    <link href="https://shanergang.github.io/2017/04/26/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA-2017-04-26-%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
+    <id>https://shanergang.github.io/2017/04/26/算法导论-2017-04-26-算法导论第二章/</id>
     <published>2017-04-26T14:40:40.000Z</published>
     <updated>2017-04-27T08:07:10.000Z</updated>
     
@@ -590,8 +682,8 @@
   
   <entry>
     <title>Hexo-进阶</title>
-    <link href="https://shanergang.github.io/2017/03/30/Hexo-%E8%BF%9B%E9%98%B6/"/>
-    <id>https://shanergang.github.io/2017/03/30/Hexo-进阶/</id>
+    <link href="https://shanergang.github.io/2017/03/30/Hexo-2017-03-30-Hexo-%E8%BF%9B%E9%98%B6/"/>
+    <id>https://shanergang.github.io/2017/03/30/Hexo-2017-03-30-Hexo-进阶/</id>
     <published>2017-03-30T05:50:13.000Z</published>
     <updated>2017-04-27T08:07:01.000Z</updated>
     
@@ -687,8 +779,8 @@
   
   <entry>
     <title>Hexo-基础</title>
-    <link href="https://shanergang.github.io/2017/03/29/Hexo-%E5%9F%BA%E7%A1%80/"/>
-    <id>https://shanergang.github.io/2017/03/29/Hexo-基础/</id>
+    <link href="https://shanergang.github.io/2017/03/29/Hexo-2017-03-29-Hexo-%E5%9F%BA%E7%A1%80/"/>
+    <id>https://shanergang.github.io/2017/03/29/Hexo-2017-03-29-Hexo-基础/</id>
     <published>2017-03-29T12:05:01.000Z</published>
     <updated>2017-04-27T08:06:55.000Z</updated>
     
